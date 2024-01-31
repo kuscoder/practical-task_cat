@@ -1,6 +1,8 @@
 .container {
-   margin: 0 auto;
-   width: min-content;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
 }
 
 h1 {

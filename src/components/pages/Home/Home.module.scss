@@ -1,6 +1,7 @@
 @use 'styles/master';
 
 .application {
+   position: relative;
    display: flex;
    flex-direction: column;
    height: 100vh;
@@ -8,35 +9,40 @@
 
 .content {
    margin: 0 auto;
-   max-width: 850px;
+   max-width: 750px;
    max-height: 100%;
    height: 100%;
 }
 
 .header {
-   min-height: 250px;
+   min-height: 230px;
    max-height: 300px;
-   height: 40vh;
-
+   height: 300px;
    color: #{master.$accent};
    background-color: #{master.$default};
+   transition: height 0.4s;
 
    .content {
       display: flex;
+      align-items: flex-start;
       justify-content: space-between;
    }
 }
 
 .container {
-   padding: 20px 0 0 20px;
+   margin: 22px 0 0 35px;
+}
+
+.select {
+   position: relative;
+   z-index: 2;
+   width: min-content;
 }
 
 .title {
    display: flex;
    align-items: center;
    gap: 10px;
-
-   margin: 2px 0 0 15px;
 
    h1 {
       font-size: 96px;
@@ -53,6 +59,7 @@
 
 .image {
    overflow: hidden;
+   transition: transform 0.4s;
 
    img {
       width: 225px;
@@ -75,5 +82,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 20px;
+
+      p {
+         text-align: center;
+      }
+   }
+}
+
+@media (max-width: 450px) {
+   .image {
+      transform: translateY(-100%);
+   }
+
+   .header {
+      height: 230px;
    }
 }

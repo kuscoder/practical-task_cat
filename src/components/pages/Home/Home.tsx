@@ -1,16 +1,12 @@
 import { FC } from 'react'
-
-import { useTypedSelector, useTypedDispatch } from 'common/store'
-import { currenciesSlice, Currency } from 'common/store/currencies'
-
 import { Select } from 'components/shared/Select'
-
+import { useCurrencies } from './useCurrencies'
 import Kitten from 'public/assets/Kitten.png'
 import css from './Home.module.scss'
 
 const Home: FC = () => {
-   const currencies = useTypedSelector(state => state.currencies)
-   const dispatch = useTypedDispatch()
+   const { currencies, choose, options } = useCurrencies()
+   const choosed = currencies.list.find(currency => currency.id === currencies.choosedId)
 
    return (
       <div className={css.application}>
@@ -22,7 +18,13 @@ const Home: FC = () => {
                      <p>currencies academic terms</p>
                   </div>
 
-                  <Select />
+                  <Select
+                     className={css.select}
+                     placeholder="Loading..."
+                     value={currencies.choosedId}
+                     setValue={choose}
+                     options={options}
+                  />
                </div>
 
                <div className={css.image}>
@@ -33,7 +35,8 @@ const Home: FC = () => {
 
          <div className={css.footer}>
             <div className={css.content}>
-               <p>Russian Ruble</p>
+               {choosed && <p>{choosed.name}</p>}
+               {!choosed && <p>Probably nothing...</p>}
             </div>
          </div>
       </div>

@@ -9,16 +9,19 @@ module.exports = {
    mode: isDevelopment ? 'development' : 'production',
    entry: './src/index.tsx',
    devServer: {
-      hot: true
+      historyApiFallback: true,
+      hot: true,
+      port: 3000
    },
    target: 'web',
    output: {
+      clean: true,
       filename: 'bundle.[hash].js',
       path: path.resolve(__dirname, 'build')
    },
    plugins: [
       new HtmlWebpackPlugin({
-         template: './public/index.html'
+         template: './src/public/index.html'
       }),
       isDevelopment && new webpack.HotModuleReplacementPlugin(),
       isDevelopment && new ReactRefreshWebpackPlugin()

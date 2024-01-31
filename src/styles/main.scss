@@ -1,0 +1,19 @@
+@use 'styles/master';
+
+html {
+   width: 100vw;
+   overflow-x: hidden;
+}
+
+body {
+   background-color: #{master.$default};
+}
+
+#root {
+   position: relative;
+   z-index: 1;
+   font-size: 18px;
+   font-weight: 300;
+   font-family: 'Kreon', serif;
+   color: #{master.$accent};
+}

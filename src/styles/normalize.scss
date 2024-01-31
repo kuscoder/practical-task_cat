@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+
+   vertical-align: baseline;
+   font: inherit;
+
+   border: none;
+   outline: none;
+}
+
+body {
+   scroll-behavior: smooth;
+   text-rendering: optimizeSpeed;
+}
+
+a {
+   cursor: pointer;
+   display: inline-block;
+   text-decoration: none;
+}
+
+input {
+   cursor: text;
+   color: inherit;
+}
+
+button {
+   cursor: pointer;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+   user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+   *,
+   *::before,
+   *::after {
+      scroll-behavior: auto !important;
+      transition: none !important;
+      transition-duration: 0.01ms !important;
+      animation: none !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+   }
+}

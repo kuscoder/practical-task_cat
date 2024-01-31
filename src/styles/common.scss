@@ -1,0 +1,6 @@
+@use 'styles/master';
+
+.empty {
+   text-align: center;
+   color: #{master.$secondary};
+}

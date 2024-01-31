@@ -1,6 +1,77 @@
 @use 'styles/master';
 
-.empty {
-   text-align: center;
-   color: #{master.$secondary};
+.scroll-x {
+   overflow-x: auto;
+   overflow-y: hidden;
+}
+
+.scroll-y {
+   overflow-x: hidden;
+   overflow-y: auto;
+}
+
+.scroll-xy {
+   overflow-x: auto;
+   overflow-y: auto;
+}
+
+.scroll-x,
+.scroll-y,
+.scroll-xy {
+   &::-webkit-scrollbar-button:vertical:start:decrement,
+   &::-webkit-scrollbar-button:vertical:end:increment {
+      display: none;
+      visibility: hidden;
+      height: 0;
+      background-color: transparent;
+   }
+
+   &::-webkit-scrollbar,
+   &::-webkit-scrollbar-track {
+      width: 3px;
+      height: 3px;
+      background-color: transparent;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      width: 3px;
+      height: 3px;
+      border-radius: 3px;
+      background-color: rgba(0, 0, 0, 0.5);
+   }
+}
+
+.scroll-hidden {
+   &::-webkit-scrollbar,
+   &::-webkit-scrollbar-track,
+   &::-webkit-scrollbar-thumb {
+      display: none;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      border-radius: 0;
+      background-color: transparent;
+   }
+}
+
+.focus-default {
+   --color: #{master.$default};
+}
+
+.focus-accent {
+   --color: #{master.$accent};
+}
+
+.focus-default,
+.focus-accent {
+   transition: box-shadow 0.2s;
+
+   &:focus-visible {
+      position: relative;
+      z-index: 1;
+      box-shadow: 0px 0px 0px 2px var(--color);
+   }
 }

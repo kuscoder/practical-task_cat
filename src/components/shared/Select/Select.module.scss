@@ -48,12 +48,8 @@
    width: 100%;
    max-height: 172px;
 
-   pointer-events: none;
-   opacity: 0;
-
    border: 1px solid #{master.$secondary};
    background-color: #{master.$default};
-   transition: opacity 0.2s;
 
    li {
       user-select: none;
@@ -107,10 +103,5 @@
 .focus {
    .value img {
       transform: rotate(180deg);
-   }
-
-   .options {
-      pointer-events: auto;
-      opacity: 1;
    }
 }

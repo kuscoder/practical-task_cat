@@ -1,11 +1,13 @@
 import { FC } from 'react'
 import { Select } from 'components/shared/Select'
 import { useCurrencies } from './useCurrencies'
+import { useOptionsFromCurrenciesList } from './useCurrenciesOptions'
 import Kitten from 'public/assets/Kitten.png'
 import css from './Home.module.scss'
 
 const Home: FC = () => {
-   const { currencies, choose, options } = useCurrencies()
+   const { currencies, choose } = useCurrencies()
+   const options = useOptionsFromCurrenciesList()
    const choosed = currencies.list.find(currency => currency.id === currencies.choosedId)
 
    return (
@@ -35,8 +37,7 @@ const Home: FC = () => {
 
          <div className={css.footer}>
             <div className={css.content}>
-               {choosed && <p>{choosed.name}</p>}
-               {!choosed && <p>Probably nothing...</p>}
+               <p>{choosed ? choosed.name : 'Probably nothing...'}</p>
             </div>
          </div>
       </div>

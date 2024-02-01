@@ -1,13 +1,11 @@
-import { useCallback, useEffect, useMemo } from 'react'
+import { useCallback, useEffect } from 'react'
 import { currenciesService } from 'common/services/currencies'
 import { useTypedSelector, useTypedDispatch } from 'common/store'
 import { currenciesSlice, Currency, CurrenciesState } from 'common/store/currencies'
-import { Option } from 'components/shared/Select'
 
 interface UseCurrenciesResponse {
    currencies: CurrenciesState
    choose: (value: Currency['id']) => void
-   options: Option[]
 }
 
 export function useCurrencies(): UseCurrenciesResponse {
@@ -19,11 +17,6 @@ export function useCurrencies(): UseCurrenciesResponse {
          dispatch(currenciesSlice.actions.choose(value))
       },
       [dispatch]
-   )
-
-   const options = useMemo<Option[]>(
-      () => currencies.list.map(currency => ({ value: currency.id, label: currency.id })),
-      [currencies.list]
    )
 
    useEffect(() => {
@@ -38,7 +31,6 @@ export function useCurrencies(): UseCurrenciesResponse {
 
    return {
       currencies,
-      choose,
-      options
+      choose
    }
 }

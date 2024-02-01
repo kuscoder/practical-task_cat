@@ -27,9 +27,9 @@ export const Select: FC<SelectProps> = ({ className, placeholder, value, setValu
 
          <ul className={classNames('scroll-y', css.options)}>
             {options.map(option => (
-               <li className={css.option} key={option.value}>
+               <li className={classNames(css.option, { [css.choosed]: option.value === value })} key={option.value}>
                   <button type="button" onClick={chooseHandler(option.value)}>
-                     {option.label}
+                     <span>{option.label}</span>
                   </button>
                </li>
             ))}

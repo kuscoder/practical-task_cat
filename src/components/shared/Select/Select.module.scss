@@ -45,7 +45,7 @@
    left: 0;
 
    width: 100%;
-   max-height: 170px;
+   max-height: 172px;
 
    pointer-events: none;
    opacity: 0;
@@ -73,14 +73,25 @@
       background-color: #{master.$default};
       transition: background-color 0.2s;
 
-      &:hover,
-      &:focus-visible {
-         background-color: #{master.$secondary-lighter};
+      span {
+         padding: 0 5px;
+         border-radius: 6px;
+         transition: box-shadow 0.2s;
+      }
+
+      &:focus-visible span {
+         position: relative;
+         z-index: 1;
+         box-shadow: 0px 0px 0px 2px #{master.$accent};
       }
    }
 
    &:not(:last-child) button {
       border-bottom: 1px solid #{master.$secondary};
+   }
+
+   &.choosed button {
+      background-color: #{master.$default-highlight};
    }
 }
 

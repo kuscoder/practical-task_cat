@@ -27,6 +27,7 @@
    border-radius: 10px;
    border: 1px solid #{master.$secondary};
    background-color: #{master.$default};
+   box-shadow: 4px 4px 4px 0px #{master.$shadow};
 
    span.placeholder {
       color: #{master.$secondary};

@@ -19,6 +19,7 @@
    max-height: 300px;
    height: 300px;
    color: #{master.$accent};
+   text-shadow: 1px 1px 0px #{master.$default}, 4px 4px 0px #{master.$shadow};
    background-color: #{master.$default};
    transition: height 0.4s;
 

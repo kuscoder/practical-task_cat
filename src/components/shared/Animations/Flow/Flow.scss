@@ -1,0 +1,115 @@
+.fade {
+   &-enter {
+      opacity: 0;
+   }
+
+   &-enter-active {
+      opacity: 1;
+      transition: opacity 0.4s;
+   }
+
+   &-exit {
+      opacity: 1;
+   }
+
+   &-exit-active {
+      opacity: 0;
+      transition: opacity 0.4s;
+   }
+}
+
+.flow-top {
+   &-enter {
+      opacity: 0;
+      transform: translateY(-50px);
+   }
+
+   &-enter-active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: transform 0.4s, opacity 0.4s;
+   }
+
+   &-exit {
+      opacity: 1;
+      transform: translateY(0);
+   }
+
+   &-exit-active {
+      opacity: 0;
+      transform: translateY(-50px);
+      transition: transform 0.4s, opacity 0.4s;
+   }
+}
+
+.flow-left {
+   &-enter {
+      opacity: 0;
+      transform: translateX(-50px);
+   }
+
+   &-enter-active {
+      opacity: 1;
+      transform: translateX(0);
+      transition: transform 0.4s, opacity 0.4s;
+   }
+
+   &-exit {
+      opacity: 1;
+      transform: translateX(0);
+   }
+
+   &-exit-active {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: transform 0.4s, opacity 0.4s;
+   }
+}
+
+.flow-bottom {
+   &-enter {
+      opacity: 0;
+      transform: translateY(50px);
+   }
+
+   &-enter-active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: transform 0.4s, opacity 0.4s;
+   }
+
+   &-exit {
+      opacity: 1;
+      transform: translateY(0);
+   }
+
+   &-exit-active {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: transform 0.4s, opacity 0.4s;
+   }
+}
+
+.flow-right {
+   &-enter {
+      opacity: 0;
+      transform: translateX(50px);
+   }
+
+   &-enter-active {
+      opacity: 1;
+      transform: translateX(0);
+      transition: transform 0.4s, opacity 0.4s;
+   }
+
+   &-exit {
+      opacity: 1;
+      transform: translateX(0);
+   }
+
+   &-exit-active {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: transform 0.4s, opacity 0.4s;
+   }
+}

@@ -1,11 +1,11 @@
 {
-   "name": "cat",
+   "name": "practical-task_cat",
    "description": "Practical task react app",
    "keywords": [],
    "version": "1.0.0",
    "license": "ISC",
-   "author": "Nikita Kus <kus.coder@gmail.com>",
-   "main": "app.js",
+   "author": "Nikita Kus <kuscoder@yandex.ru>",
+   "main": "index.js",
    "scripts": {
       "serve": "webpack serve --open --mode development",
       "build": "webpack"

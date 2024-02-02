@@ -25,7 +25,7 @@ module.exports = {
          extensions: ['js', 'jsx', 'ts', 'tsx']
       }),
       new HtmlWebpackPlugin({
-         template: './src/public/index.html'
+         template: './public/index.html'
       }),
       isDevelopment && new webpack.HotModuleReplacementPlugin(),
       isDevelopment && new ReactRefreshWebpackPlugin()

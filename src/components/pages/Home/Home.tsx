@@ -13,10 +13,10 @@ const Home: FC = () => {
    const choosedCurrency = list.find(currency => currency.id === choosedId)
 
    return (
-      <div className={css.application}>
-         <div className={css.header}>
+      <main className={css.home}>
+         <header className={css.header}>
             <div className={css.content}>
-               <div className={css.container}>
+               <section className={css.container}>
                   <div className={css.title}>
                      <h1>CAT</h1>
                      <p>currencies academic terms</p>
@@ -29,23 +29,23 @@ const Home: FC = () => {
                      setValue={chooseCurrency}
                      options={options}
                   />
-               </div>
+               </section>
 
-               <div className={css.image}>
+               <section className={css.image}>
                   <img
                      src={Kitten}
                      alt="Логотип"
                   />
-               </div>
+               </section>
             </div>
-         </div>
+         </header>
 
-         <div className={css.footer}>
+         <footer className={css.footer}>
             <div className={css.content}>
-               <p>{choosedCurrency ? choosedCurrency.name : 'Probably nothing...'}</p>
+               {choosedCurrency ? choosedCurrency.name : 'Probably nothing...'}
             </div>
-         </div>
-      </div>
+         </footer>
+      </main>
    )
 }
 

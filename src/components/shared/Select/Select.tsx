@@ -6,7 +6,7 @@ import { SelectProps } from './Select.types'
 import chevronDown from 'public/assets/chevron-down.svg'
 import css from './Select.module.scss'
 
-export const Select: FC<SelectProps> = ({ className, placeholder, value, setValue, options }) => {
+export const Select: FC<SelectProps> = ({ className, placeholder, textIsEmpty, value, setValue, options }) => {
    const [focus, setFocus] = useState(false)
 
    const container = useFocusOut<HTMLDivElement>(focus, () => {
@@ -28,8 +28,10 @@ export const Select: FC<SelectProps> = ({ className, placeholder, value, setValu
             onFocus={() => setFocus(true)}
             type="button"
          >
-            {value && <span>{value}</span>}
-            {!value && <span className={css.placeholder}>{placeholder}</span>}
+            <span className={classNames({ [css.placeholder]: !value })}>
+               {value || placeholder}
+            </span>
+
             <img
                src={chevronDown}
                alt="chevronDown"
@@ -55,7 +57,7 @@ export const Select: FC<SelectProps> = ({ className, placeholder, value, setValu
                   </li>
                ))}
 
-               {!options.length && <li className={css.empty}>Nothing was found</li>}
+               {!options.length && <li className={css.empty}>{textIsEmpty}</li>}
             </ul>
          </Flow>
       </div>

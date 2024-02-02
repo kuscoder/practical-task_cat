@@ -11,6 +11,7 @@ const timeouts: Record<FlowTypes, number> = {
    'flow-right': 400
 }
 
+// Wrapper for animating a single element
 export const Flow = ({ type, active, children }: FlowProps) => (
    <CSSTransition
       in={active}
@@ -23,6 +24,7 @@ export const Flow = ({ type, active, children }: FlowProps) => (
    </CSSTransition>
 )
 
+// Wrapper for animating a list of items
 export const FlowGroup = ({ className, type, style, children }: FlowGroupProps) => (
    <TransitionGroup
       className={className}

@@ -1,5 +1,7 @@
 import { useRef, useEffect } from 'react'
 
+// Tracks the moment when the focus leaves the container
+// Returns a ref for the container
 export function useFocusOut<E extends HTMLElement>(focus: boolean, callback: () => void): React.RefObject<E> {
    const element = useRef<E>(null)
 

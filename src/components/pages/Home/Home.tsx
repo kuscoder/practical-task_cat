@@ -25,6 +25,7 @@ const Home: FC = () => {
                   <Select
                      className={css.select}
                      placeholder="Loading..."
+                     textIsEmpty="Nothing was found"
                      value={currencies.choosedId}
                      setValue={chooseCurrency}
                      options={options}
@@ -42,7 +43,7 @@ const Home: FC = () => {
 
          <footer className={css.footer}>
             <div className={css.content}>
-               {choosedCurrency ? choosedCurrency.name : 'Probably nothing...'}
+               <h2>{choosedCurrency ? choosedCurrency.name : 'Probably nothing...'}</h2>
             </div>
          </footer>
       </main>

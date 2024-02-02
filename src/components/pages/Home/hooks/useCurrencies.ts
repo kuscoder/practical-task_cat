@@ -3,16 +3,18 @@ import { currenciesService } from 'common/services/currencies'
 import { useTypedSelector, useTypedDispatch } from 'common/store'
 import { currenciesSlice, Currency, CurrenciesState } from 'common/store/currencies'
 
-interface UseCurrenciesResponse {
+interface UseCurrenciesReturns {
    currencies: CurrenciesState
-   choose: (value: Currency['id']) => void
+   chooseCurrency: (value: Currency['id']) => void
 }
 
-export function useCurrencies(): UseCurrenciesResponse {
+// Gets and dispatchs currencies list from service to redux store
+// Returns: func for choosing currency, currencies list from redux store
+export function useCurrencies(): UseCurrenciesReturns {
    const currencies = useTypedSelector(state => state.currencies)
    const dispatch = useTypedDispatch()
 
-   const choose = useCallback(
+   const chooseCurrency = useCallback(
       (value: string) => {
          dispatch(currenciesSlice.actions.choose(value))
       },
@@ -31,6 +33,6 @@ export function useCurrencies(): UseCurrenciesResponse {
 
    return {
       currencies,
-      choose
+      chooseCurrency
    }
 }

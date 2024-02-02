@@ -6,9 +6,11 @@ import Kitten from 'public/assets/Kitten.png'
 import css from './Home.module.scss'
 
 const Home: FC = () => {
-   const { currencies, choose } = useCurrencies()
+   const { currencies, chooseCurrency } = useCurrencies()
    const options = useOptionsFromCurrenciesList()
-   const choosed = currencies.list.find(currency => currency.id === currencies.choosedId)
+
+   const { list, choosedId } = currencies
+   const choosedCurrency = list.find(currency => currency.id === choosedId)
 
    return (
       <div className={css.application}>
@@ -24,7 +26,7 @@ const Home: FC = () => {
                      className={css.select}
                      placeholder="Loading..."
                      value={currencies.choosedId}
-                     setValue={choose}
+                     setValue={chooseCurrency}
                      options={options}
                   />
                </div>
@@ -40,7 +42,7 @@ const Home: FC = () => {
 
          <div className={css.footer}>
             <div className={css.content}>
-               <p>{choosed ? choosed.name : 'Probably nothing...'}</p>
+               <p>{choosedCurrency ? choosedCurrency.name : 'Probably nothing...'}</p>
             </div>
          </div>
       </div>

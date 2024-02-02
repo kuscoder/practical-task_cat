@@ -5,6 +5,9 @@ import { useOptionsFromCurrenciesList } from './hooks/useCurrenciesOptions'
 import Kitten from 'public/assets/Kitten.png'
 import css from './Home.module.scss'
 
+import locales from './Home.locales.json'
+const { header_title, header_subtext, select_loading, select_empty, footer_nothing } = locales
+
 const Home: FC = () => {
    const { currencies, chooseCurrency } = useCurrencies()
    const options = useOptionsFromCurrenciesList()
@@ -18,14 +21,14 @@ const Home: FC = () => {
             <div className={css.content}>
                <section className={css.container}>
                   <div className={css.title}>
-                     <h1>CAT</h1>
-                     <p>currencies academic terms</p>
+                     <h1>{header_title}</h1>
+                     <p>{header_subtext}</p>
                   </div>
 
                   <Select
                      className={css.select}
-                     placeholder="Loading..."
-                     textIsEmpty="Nothing was found"
+                     placeholder={select_loading}
+                     textIsEmpty={select_empty}
                      value={currencies.choosedId}
                      setValue={chooseCurrency}
                      options={options}
@@ -35,7 +38,7 @@ const Home: FC = () => {
                <section className={css.image}>
                   <img
                      src={Kitten}
-                     alt="Логотип"
+                     alt="Kitten"
                   />
                </section>
             </div>
@@ -43,7 +46,7 @@ const Home: FC = () => {
 
          <footer className={css.footer}>
             <div className={css.content}>
-               <h2>{choosedCurrency ? choosedCurrency.name : 'Probably nothing...'}</h2>
+               <h2>{choosedCurrency ? choosedCurrency.name : footer_nothing}</h2>
             </div>
          </footer>
       </main>

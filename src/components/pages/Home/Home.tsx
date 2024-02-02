@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Select } from 'components/shared/Select'
-import { useCurrencies } from './useCurrencies'
-import { useOptionsFromCurrenciesList } from './useCurrenciesOptions'
+import { useCurrencies } from './hooks/useCurrencies'
+import { useOptionsFromCurrenciesList } from './hooks/useCurrenciesOptions'
 import Kitten from 'public/assets/Kitten.png'
 import css from './Home.module.scss'
 
@@ -30,7 +30,10 @@ const Home: FC = () => {
                </div>
 
                <div className={css.image}>
-                  <img src={Kitten} alt="Логотип" />
+                  <img
+                     src={Kitten}
+                     alt="Логотип"
+                  />
                </div>
             </div>
          </div>

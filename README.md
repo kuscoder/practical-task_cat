@@ -1,3 +1,8 @@
+# Practical task: CAT
+
+Live demo - https://kuscoder.github.io/task-cat/
+#
+
 **В паре абзацев опишите:**  
 * **A**. какие вы использовали:  
    1. хорошие практики написания кода  

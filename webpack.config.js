@@ -17,8 +17,9 @@ module.exports = {
    target: 'web',
    output: {
       clean: true,
+      publicPath: '/task-cat/',
       filename: 'bundle.[hash].js',
-      path: path.resolve(__dirname, 'build')
+      path: path.resolve(__dirname, 'dist')
    },
    plugins: [
       new ESLintPlugin({

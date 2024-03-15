@@ -1,14 +1,19 @@
 {
-   "name": "practical-task_cat",
+   "name": "task-cat",
    "description": "Practical task react app",
-   "keywords": [],
-   "version": "1.0.0",
-   "license": "ISC",
    "author": "Nikita Kus <kuscoder@yandex.ru>",
-   "main": "index.js",
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/kuscoder/task-cat/"
+   },
+   "homepage": "http://kuscoder.github.io/task-cat/",
+   "private": true,
+   "version": "1.0.0",
    "scripts": {
       "serve": "webpack serve --open --mode development",
-      "build": "webpack"
+      "build": "webpack",
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -d dist"
    },
    "dependencies": {
       "@reduxjs/toolkit": "^2.1.0",
@@ -37,6 +42,7 @@
       "eslint-plugin-react-hooks": "^4.6.0",
       "eslint-webpack-plugin": "^4.0.1",
       "file-loader": "^6.2.0",
+      "gh-pages": "^6.1.1",
       "html-webpack-plugin": "^5.6.0",
       "react-refresh": "^0.14.0",
       "sass": "^1.70.0",

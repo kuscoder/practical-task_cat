@@ -25,12 +25,10 @@ export const Select: FC<SelectProps> = ({ className, placeholder, textIsEmpty, v
       >
          <button
             className={classNames('focus-accent', css.value)}
-            onFocus={() => setFocus(true)}
+            onClick={() => setFocus(true)}
             type="button"
          >
-            <span className={classNames({ [css.placeholder]: !value })}>
-               {value || placeholder}
-            </span>
+            <span className={classNames({ [css.placeholder]: !value })}>{value || placeholder}</span>
 
             <img
                src={chevronDown}
